@@ -1,0 +1,64 @@
+{
+	"password_key":"!@#$%^&*(*&^%$QWERTYUIqwertyui234567",
+	"logger":{
+		"name":"example",
+		"levelname":"info",
+		"logfile":"$[workdir]$/logs/example.log"
+	},
+	"filesroot":"$[workdir]$/files",
+	"databases":{
+		"test":{
+			"driver":"mysql",
+			"kwargs":{
+				"user":"test",
+				"db":"test",
+				"password": "XXX",
+				"host":"localhost"
+			}
+		}
+	},
+	"website":{
+		"paths":[
+			["$[workdir]$/wwwroot",""]
+		],
+		"client_max_size":10000,
+		"host":"0.0.0.0",
+		"port":8080,
+		"coding":"utf-8",
+		"indexes":[
+			"index.html",
+			"index.tmpl",
+			"index.ui",
+			"index.dspy",
+			"index.md"
+		],
+		"startswiths":[
+			{
+				"leading":"/idfile",
+				"registerfunction":"idfile"
+			}
+		],
+		"processors":[
+			[".ws","ws"],
+			[".xterm","xterm"],
+			[".proxy","proxy"],
+			[".llm", "llm"],
+			[".llms", "llms"],
+			[".llma", "llma"],
+			[".xlsxds","xlsxds"],
+			[".sqlds","sqlds"],
+			[".tmpl.js","tmpl"],
+			[".tmpl.css","tmpl"],
+			[".html.tmpl","tmpl"],
+			[".bcrud", "bricks_crud"],
+			[".tmpl","tmpl"],
+			[".app","app"],
+			[".bui","bui"],
+			[".ui","bui"],
+			[".dspy","dspy"],
+			[".md","md"]
+		],
+		"session_max_time":3000,
+		"session_issue_time":2500
+	}
+}
