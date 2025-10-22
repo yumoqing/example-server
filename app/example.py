@@ -6,9 +6,9 @@ def get_module_dbname(module_name):
 	return 'test'
 
 def init():
+	load_pybricks()
 	env = ServerEnv()
 	env.get_module_dbname = get_module_dbname
-	load_pybricks()
 
 if __name__ == '__main__':
 	webapp(init)
